@@ -1,0 +1,13 @@
+<h1> Nova postagem </h1>
+
+<%= form_for :post, url: posts_path do |f| %>
+	<p>
+		<%= f.label 'Título' %>
+		<%= f.text_field :post %>
+	</p>
+	<p>
+		<%= f.label 'Texto' %>
+		<%= f.text_area :post %>
+	</p>
+	<%= f.submit 'Salvar' %>
+<% end %>
