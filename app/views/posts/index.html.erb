@@ -1,6 +1,14 @@
+<% mes = Hash["Jan" => "Janeiro", "Feb" => "Fevereiro", "Mar" => "Março", "Apr" => "Abril",
+ 	"May" => "Maio", "Jun" => "Junho", "Jul" => "Julho", "Aug" => "Agosto", "Sep" => "Setembro",
+ 	"Oct" => "Outubro", "Nov" => "Novembro", "Dec" => "Dezembro"]
+%>
 <% @posts.each do |post| %>
 	<div class="post_wrapper">
 		<h2 class="title"><%= link_to post.title, post %></h2>
-		<p class="date"><%= post.created_at.strftime("%d, %B, %Y") %></p>
+		<h5><p class="date"> Criado em <%= post.created_at.strftime("%d")%>
+			de <%= mes[post.created_at.strftime("%B")] %> de 
+			<%= post.created_at.strftime("%Y") %>
+		</p>
+	</h5>
 	</div>
 <% end %>
