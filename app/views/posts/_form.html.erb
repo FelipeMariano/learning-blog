@@ -1,0 +1,19 @@
+	<%= form_for @post do |f| %>
+		<% if @post.errors.any? %>
+			<h3 style="color: red;"><%= pluralize(@post.errors.count, "erro") %> encontrados</h3>
+			<ul>
+				<% @post.errors.full_messages.each do |erro| %>
+					<li><%= erro %></li>
+				<% end %>
+			</ul>
+		<% end %>
+		<p>
+			<%= f.label 'Título' %><br>
+			<%= f.text_field :title %>
+		</p>
+		<p>
+			<%= f.label 'Texto' %><br>
+			<%= f.text_area :body %>
+		</p>
+		<%= f.submit 'Salvar' %>
+	<% end %>
