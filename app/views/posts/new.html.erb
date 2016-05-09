@@ -3,11 +3,11 @@
 <%= form_for :post, url: posts_path do |f| %>
 	<p>
 		<%= f.label 'Título' %>
-		<%= f.text_field :post %>
+		<%= f.text_field :title %>
 	</p>
 	<p>
 		<%= f.label 'Texto' %>
-		<%= f.text_area :post %>
+		<%= f.text_area :body %>
 	</p>
 	<%= f.submit 'Salvar' %>
 <% end %>
