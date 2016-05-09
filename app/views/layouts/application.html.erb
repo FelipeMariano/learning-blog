@@ -3,12 +3,43 @@
 <head>
   <title>LearningBlog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 	'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="sidebar">
+		<div id="logo">
+			<%= link_to root_path do %>
+				<%= image_tag "logo.svg" %>
+			<% end %>
+		</div>
+		<br><br>
+		<ul>
+			<li class="category">blog</li>
+			<li><%= link_to "Postagens", root_path %></li>
+			<li>Sobre</li>
+		</ul>
 
-<%= yield %>
+		<ul>
+			<li class="category">Social</li>
+			<li>Linkedin</li>
+			<li>Github</li>
+			<li>E-mail</li>
+			<br>
+			<hr>
+			<br>
+			<p class="button"><%= link_to "Postar", new_post_path %></p>
+		</ul>
+		<p></p>
+		<p class="sign_in">Admin login</p>
+	</div>
+<div id="main_content">	
+	<%= yield %>
+	<% flash.each do |name, msg| %>
+		<%= content_tag(:div, msg, class:"alert") %>
+	<% end %>
+</div>
 
 </body>
 </html>

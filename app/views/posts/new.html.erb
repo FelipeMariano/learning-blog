@@ -1,13 +1,15 @@
-<h1> Nova postagem </h1>
+<div id="page_wrapper">
+	<h3><strong>Nova postagem:</strong></h3>
 
-<%= form_for :post, url: posts_path do |f| %>
-	<p>
-		<%= f.label 'Título' %>
-		<%= f.text_field :title %>
-	</p>
-	<p>
-		<%= f.label 'Texto' %>
-		<%= f.text_area :body %>
-	</p>
-	<%= f.submit 'Salvar' %>
-<% end %>
+	<%= form_for :post, url: posts_path do |f| %>
+		<p>
+			<%= f.label 'Título' %><br>
+			<%= f.text_field :title %>
+		</p>
+		<p>
+			<%= f.label 'Texto' %><br>
+			<%= f.text_area :body %>
+		</p>
+		<%= f.submit 'Salvar' %>
+	<% end %>
+</div>
